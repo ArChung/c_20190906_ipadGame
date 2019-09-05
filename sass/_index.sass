@@ -1,0 +1,239 @@
+
+
+html,body 
+	width: 100%
+	height: 100%
+
+=pic($pic-name)
+	+aspect-ratio(image-width("../images/#{$pic-name}"),image-height("../images/#{$pic-name}"))
+	+bgi($pic-name)
+	width: image-width("../images/#{$pic-name}") / 2048px * 100%
+	background-size: contain
+	background-repeat: no-repeat
+
+=top($t)
+	top: $t / 1536 * 100%
+=left($x)
+	left: $x / 2048 * 100%
+
+.mainContainer
+	width: 100%
+	height: 100%
+	overflow: hidden
+	position: relative
+	.page
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		left: 0
+	.qaChannel
+		left: 100%
+		// overflow: hidden
+	
+
+
+	
+
+.index
+	.logo1
+		+pic('logo1.png')
+		width: 150px
+		position: absolute
+		top: 50px
+		left: 30px
+		transform-origin: 0% 0%
+		+pad
+			left: 15px 
+			top: 40px
+			+scale(.7)
+		+phone 
+			+scale(.5)
+
+	.logo2
+		+pic('logo2.png')
+		width: 150px
+		position: absolute
+		right: 30px
+		top: 30px
+		transform-origin: 100% 0%
+		+pad 
+			right: 15px
+			top: 30px
+			+scale(.7)
+		+phone 
+			+scale(.5)
+
+	+bgi('bg2.jpg')
+	
+	+coverBg
+	
+	
+	.wTxt
+		position: absolute
+		bottom: 20px
+		left: 30px
+		font-size: 10px
+	.title
+		position: absolute
+		width: 700px
+		left: 50%
+		top: 50%
+		transform: translateX(-80%) translateY(-50%)
+		+pad
+			width: 500px
+		+phone 
+
+
+		
+		
+		.t1
+			+pic('title01.png')
+			width: 100%
+		.btn
+			+pic('btn.png')
+			width: 50%
+			position: relative
+			z-index: 5
+			left: 50%
+			margin-top: 50px
+			transform: translateX(-50%)
+			+phone 
+				margin-top: 20px
+
+
+	@media screen and (max-width: 880px )
+		+bgi('bg3.jpg')
+		.title
+			transform: translateX(0%) translateY(-50%)
+			left: 15px
+			width: 70%
+.swiper-container
+	width: 100%
+	height: 100%
+.qPage
+	
+	display: flex
+	justify-content: center
+	padding: 18% 10% 0%
+	+pad 
+		padding: 23% 5% 0%
+	+phone 
+		padding: 32% 5% 0%
+
+	.rTxt
+		color: #c2133a
+	
+	.qaBox
+		font-weight: bold
+		.qTxt
+			font-size: 4rem
+			+phone 
+				font-size: 2.5rem
+		.aBox 
+			margin-top: 30px
+			font-size: 2.8rem
+			+phone 
+				margin-top: 15px
+				font-size: 1.8rem
+			.aTxt
+				padding-left: 55px
+				+bgi('box.png')
+				background-repeat: no-repeat
+				cursor: pointer
+				position: relative
+				margin-bottom: 15px
+				&.a_wrong
+					+bgi('box_w.png')  
+				&.a_correct
+					+bgi('box_c.png')
+				+phone 
+					+bgi('box2.png')
+					padding-left: 35px
+					&.a_wrong
+						+bgi('box2_w.png')
+					&.a_correct
+						+bgi('box2_c.png')
+
+.qaChannel	
+	+bgi('bg.jpg')
+	+coverBg
+	.top
+		+pic('top2.png') 
+		width: 100% 
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 15
+		+pad 
+			+pic('top.png')  
+			position: absolute
+			width: 100% 
+
+		+phone 
+			+pic('top3.png') 
+			position: absolute
+			width: 100% 
+	.btns
+		position: absolute
+		bottom: 25px
+		right: 25px
+		display: flex 
+		z-index: 15
+		+phone 
+			+scale(0.7)
+			transform-origin: 100% 100%
+
+		.pre
+			+bg('p.png')
+			margin: 0 15px
+			cursor: pointer
+		.next
+			+bg('n.png')
+			margin: 0 15px
+			cursor: pointer
+		.home
+			+bg('h.png')
+			margin: 0 15px
+			cursor: pointer
+		.disable
+			+opacity(.15)
+			pointer-events: none
+
+.resultPage
+	.r_h1
+		font-size: 6rem
+		+pad 
+			font-size: 5rem
+		+phone
+			font-size: 2.7rem
+	.r_h2
+		font-size: 3.8rem
+		font-weight: normal
+		+pad 
+			font-size: 3rem
+		+phone
+			font-size: 1.8rem
+	.price 
+		+pic('www.png')
+		width: 100%
+		margin-top: 20px 
+
+.smile
+	+pic('ww5.png')
+	width: 60px
+	display: inline-block
+	vertical-align: text-top
+	margin-top: 12px
+	+phone 
+		width: 30px
+		margin-top: 3px
+.unsmile
+	+pic('ww6.png')
+	width: 60px
+	display: inline-block
+	vertical-align: text-top
+	margin-top: 12px
+	+phone 
+		width: 30px
+		margin-top: 3px
